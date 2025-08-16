@@ -17,10 +17,19 @@ public class TextToBitmapArrayConverter {
 		g.fillRect(0, 0, TextToBitmapArrayConverter.W, TextToBitmapArrayConverter.H);
 
 		g.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_OFF);
-		// String fontName = "UD デジタル 教科書体 N-B";
-		String fontName = "ＭＳ ゴシック";
-		Font f = new Font(fontName, Font.PLAIN, 16);
-		g.setFont(f);
+		try {
+			String fontName = "ＭＳ ゴシック";
+			// String fontName = "ＭＳ 明朝";
+			Font f = new Font(fontName, Font.PLAIN, 16);
+			g.setFont(f);
+		} catch(Exception e) {
+			e.printStackTrace();
+
+			Font f = new Font(Font.SANS_SERIF, Font.PLAIN, 16);
+			if (f != null) {
+				g.setFont(f);
+			}
+		}
 		g.setColor(Color.WHITE);
 		g.drawString("" + str, 1, 20);
 	}

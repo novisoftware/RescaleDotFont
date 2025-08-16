@@ -363,7 +363,7 @@ public class Viewer extends JFrame {
 		double p0 = (y0 - this.yMinPre) / (this.yMaxPre - this.yMinPre) * this.yDistFreq * 2 * Math.PI;
 		double p1 = p0 + this.yDistPhase * 2 * Math.PI;
 
-		System.out.println("p " + (Math.sin(p1) * this.yDistAmp));
+		// System.out.println("p " + (Math.sin(p1) * this.yDistAmp));
 
 		return Math.sin(p1) * this.yDistAmp;
 	}
