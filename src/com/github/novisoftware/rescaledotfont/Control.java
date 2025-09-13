@@ -255,6 +255,12 @@ public class Control extends JFrame {
 				ArrayList<NodeHolder> nhList = t.get(0);
 				ArrayList<NodeHolder> nhListNegative = t.get(1);
 
+
+				// 余分な枝をカット
+				for (NodeHolder nh : nhList) {
+					nh.cut();
+				}
+
 				// 座標スムージング
 				for (NodeHolder nh : nhList) {
 					nh.smoothing(smoothRatio);
